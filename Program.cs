@@ -17,8 +17,50 @@
  */
 class Program
 {
-    static void Main(string[] args)
+    static void UsePotion(int healthPoints,int healingAmount )
     {
+        Console.WriteLine("Le héros possède maintenant " + (healthPoints + healingAmount) + " PV.");
+    }
+    static void Main(string[] args)
+    {     
+        UsePotion(50, 30);
+        UsePotion(20, 50);
+        int healingAmount = 0;
+        int healthPoints = 0;
+
+        int choiceHp;
+        int choiceHealing;
         
+        do
+        {
+            Console.WriteLine("Choix 1: 30PV ou Choix 2: 50PV ");
+            choiceHp = Convert.ToInt32(Console.ReadLine());
+            if (choiceHp == 1)
+            {
+                healthPoints = 30;
+            }
+                else if (choiceHp == 2)
+                    {
+                        healthPoints = 50;
+                    }
+                    else
+                        {
+                            Console.WriteLine("Choisis entre 1 ou 2 !");
+                        }
+        } while (choiceHp != 1 && choiceHp != 2);
+        do
+        {
+            Console.WriteLine("Choix 1: Potion qui donne 20PV" + " Choix 2: Potion qui donne 50PV");
+            choiceHealing = Convert.ToInt32(Console.ReadLine());
+            if (choiceHealing == 1)
+            {
+                healingAmount = 20;
+            }
+            else if (choiceHealing == 2)
+            {
+                healingAmount = 50;
+            }
+        } while (choiceHealing != 1 && choiceHealing != 2);
+        Console.WriteLine("Le héros possède maintenant " + (healthPoints + healingAmount) + " PV");
     }
 }
